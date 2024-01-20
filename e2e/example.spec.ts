@@ -16,16 +16,3 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
-
-test('search for Playwright', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Type into search.
-  await page.fill('input[name="search"]', 'Playwright');
-
-  // Submit form.
-  await page.press('input[name="search"]', 'Enter');
-
-  // We should see "Getting Started" page.
-  await expect(page).toHaveURL('/docs/intro');
-});
